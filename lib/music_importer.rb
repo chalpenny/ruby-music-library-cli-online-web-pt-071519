@@ -7,8 +7,7 @@ class MusicImporter
   end
 
   def files
-    array = Dir.entries(path)
-    array.select {|path|path.match(".mp3")}
+    Dir.entries(path).select {|path|path.match(".mp3")}
   end
 
 end

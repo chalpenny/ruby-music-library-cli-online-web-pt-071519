@@ -41,14 +41,13 @@ class Song
     self
   end
 
-  def self.find_by_name(name)
-    self.all.find do |song|
-      song.name == name
-    end
+  def self.new_from_filename(file)
+    new_song = file.gsub("."," - ").split(" - ")
+    artist=(new_song[0])
+    genre=(new_song[2])
+
+    self.create(new_song[1])
   end
 
-  def self.find_or_create_by_name(name)
-    self.find_by_name(name) || self.create(name)
-  end
 
 end
