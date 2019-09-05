@@ -51,11 +51,17 @@ class Song
   genre = Genre.find_or_create_by_name(genre_name)
 
   new(song_name, artist, genre)
+<<<<<<< HEAD
+  end
+
+  def self.create_from_filename(file)
+    @@all << self.new_from_filename(file)
+=======
+>>>>>>> origin
   end
 
   def self.create_from_filename(file)
     @@all << self.new_from_filename(file)
   end
-
 
 end
